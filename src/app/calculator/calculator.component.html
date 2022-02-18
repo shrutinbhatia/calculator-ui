@@ -1,0 +1,23 @@
+<div align="center">
+    <h2> Calculator</h2>
+      
+        <form  [formGroup]="calculateForm" (ngSubmit)="onSubmit()">
+          <label> Question 1</label> 
+          <input type="text" class="large"  placeholder="2+1"
+        id="question1"   formControlName="question1"/>
+      <br/>
+            <label> Question 2</label> 
+            <input type="text" class="large"  placeholder="7*6"
+            id="question2"  formControlName="question2"/> 
+<br/>
+            <button class=""  id="submit-button" data-test-id="submit-button">Calculate</button>
+          </form>
+            <ul *ngIf ="resultfound" class="mt-50 styled slide-up-fade-in" id="stockData" data-test-id="stock-data" >
+              <li class="py-10">Result1 : {{calculate.result1}}</li>
+              <li class="py-10">Result2: {{calculate.result2}}</li>
+            </ul>
+          
+            <div *ngIf="errorApi" class="mt-50 slide-up-fade-in" 
+                 id="no-result" data-test-id="no-result">No Results Found</div>
+          
+          </div>
